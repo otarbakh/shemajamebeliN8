@@ -1,6 +1,8 @@
 package com.example.shemajamebelin8.di.usecase
 
-import com.bumptech.glide.load.engine.Resource
+
+
+import com.example.shemajamebelin8.Resource
 import com.example.shemajamebelin8.domain.SuitsRepository
 import com.example.shemajamebelin8.models.SuitsResponse
 import kotlinx.coroutines.flow.Flow

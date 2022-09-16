@@ -2,9 +2,10 @@ package com.example.shemajamebelin8.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.bumptech.glide.load.engine.Resource
+import com.example.shemajamebelin8.Resource
 import com.example.shemajamebelin8.di.usecase.SuitsUseCase
 import com.example.shemajamebelin8.models.SuitsResponse
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject

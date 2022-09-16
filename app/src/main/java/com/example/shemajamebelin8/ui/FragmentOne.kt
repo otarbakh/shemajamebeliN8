@@ -1,28 +1,19 @@
 package com.example.shemajamebelin8.ui
 
-import androidx.lifecycle.ViewModelProvider
-import android.os.Bundle
+
 import android.util.Log.d
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.load.engine.Resource
+
 import com.example.shemajamebelin8.BaseFragment
+import com.example.shemajamebelin8.Resource
 import com.example.shemajamebelin8.adapters.SuitsAdapter
-import com.example.shemajamebelin8.databinding.ActivityMainBinding.inflate
+
 import com.example.shemajamebelin8.databinding.FragmentFragmentOneBinding
-import com.example.shoppingapp.Adapters.ShmotkebiAdapter
-import com.example.test.BaseFragment
-import com.example.test.R
-import com.example.test.Resource
-import com.example.test.databinding.FragmentFragmentOneBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
@@ -30,7 +21,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FragmentOne : BaseFragment<FragmentFragmentOneBinding>(FragmentFragmentOneBinding::inflate) {
 
-    private val shmotkebiAdapter: SuitsAdapter by lazy { SuitsAdapter() }
+    private val suitsAdapter: SuitsAdapter by lazy { SuitsAdapter() }
     val fragmentOneViewModel:FragmentOneViewModel by viewModels()
 
     override fun viewCreated() {
@@ -54,7 +45,7 @@ class FragmentOne : BaseFragment<FragmentFragmentOneBinding>(FragmentFragmentOne
                             d("tag","loading")
                         }
                         is Resource.Success -> {
-                            shmotkebiAdapter.submitList(it.data)
+                            suitsAdapter.submitList(it.data)
                             d("tag",it.data.toString())
 
                         }
@@ -66,7 +57,7 @@ class FragmentOne : BaseFragment<FragmentFragmentOneBinding>(FragmentFragmentOne
 
     private fun setupRecycler() {
         binding.rvItems.apply {
-            adapter = shmotkebiAdapter
+            adapter = suitsAdapter
             layoutManager =
                 GridLayoutManager(requireContext(),2, GridLayoutManager.VERTICAL, false)
         }
