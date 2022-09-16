@@ -11,7 +11,7 @@ import com.example.shemajamebelin8.databinding.ItemsLayoutBinding
 import com.example.shemajamebelin8.models.SuitsResponse
 
 
-class SuitsAdapter: ListAdapter<SuitsResponse, ShmotkebiAdapter.ShmotkebiViewHolder>(TeamsDiffCallBack()) {
+class SuitsAdapter: ListAdapter<SuitsResponse, SuitsAdapter.ShmotkebiViewHolder>(TeamsDiffCallBack()) {
 
 
 
