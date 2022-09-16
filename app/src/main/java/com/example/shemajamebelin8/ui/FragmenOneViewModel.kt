@@ -3,19 +3,19 @@ package com.example.shemajamebelin8.ui
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.bumptech.glide.load.engine.Resource
-import com.example.shemajamebelin8.di.usecase.ShmotkebiUseCase
-import com.example.shemajamebelin8.models.ShmotkebiResponse
+import com.example.shemajamebelin8.di.usecase.SuitsUseCase
+import com.example.shemajamebelin8.models.SuitsResponse
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 @HiltViewModel
 class FragmentOneViewModel @Inject constructor(
-    private val shmotkebiUseCase: ShmotkebiUseCase
+    private val suitsUseCase: SuitsUseCase
 ) : ViewModel() {
 
 
-    private val _state = MutableStateFlow<Resource<List<ShmotkebiResponse>>>(Resource.Loading(false))
+    private val _state = MutableStateFlow<Resource<List<SuitsResponse>>>(Resource.Loading(false))
     val state = _state.asSharedFlow()
 
 
@@ -24,7 +24,7 @@ class FragmentOneViewModel @Inject constructor(
     }
 
     private fun getYesOrNo() {
-        shmotkebiUseCase().onEach { result ->
+        suitsUseCase().onEach { result ->
             when (result){
                 is Resource.Success -> {
                     _state.value = Resource.Success(result.data)

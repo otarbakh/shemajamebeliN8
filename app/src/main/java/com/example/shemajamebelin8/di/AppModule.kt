@@ -1,7 +1,7 @@
 package com.example.shemajamebelin8.di
 
 import com.example.shemajamebelin8.const.Constants
-import com.example.shemajamebelin8.network.ShmotkebiApi
+import com.example.shemajamebelin8.network.SuitsApi
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -13,15 +13,15 @@ import javax.inject.Singleton
 
 @Module
 @InstallIn(SingletonComponent::class)
-object MyAppModule {
+object AppModule {
 
     @Singleton
     @Provides
-    fun provideShmotkebi(): ShmotkebiApi {
+    fun provideShmotkebi(): SuitsApi {
         return Retrofit.Builder()
             .baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-            .create(ShmotkebiApi::class.java)
+            .create(SuitsApi::class.java)
     }
 }

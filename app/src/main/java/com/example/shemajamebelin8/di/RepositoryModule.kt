@@ -1,6 +1,6 @@
 package com.example.shemajamebelin8.di
 
-import com.example.shemajamebelin8.domain.ShmotkebiRepository
+import com.example.shemajamebelin8.domain.SuitsRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -13,7 +13,7 @@ abstract class RepositoryModule {
 
     @Binds
     @Singleton
-    abstract fun bindShmotkebi(
-        shmotkebiRepository:ShmotkebiRepositoryImpl
-    ): ShmotkebiRepository
+    abstract fun bindSuits(
+        suitsRepository:SuitsRepositoryImpl
+    ): SuitsRepository
 }

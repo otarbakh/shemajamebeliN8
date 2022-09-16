@@ -1,6 +1,6 @@
 package com.example.shemajamebelin8.models
 
-data class ShmotkebiResponse(
+data class SuitsResponse(
     val title:String,
     val cover:String,
     val price:String,

@@ -15,7 +15,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.load.engine.Resource
 import com.example.shemajamebelin8.BaseFragment
+import com.example.shemajamebelin8.adapters.SuitsAdapter
 import com.example.shemajamebelin8.databinding.ActivityMainBinding.inflate
+import com.example.shemajamebelin8.databinding.FragmentFragmentOneBinding
 import com.example.shoppingapp.Adapters.ShmotkebiAdapter
 import com.example.test.BaseFragment
 import com.example.test.R
@@ -28,7 +30,7 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 class FragmentOne : BaseFragment<FragmentFragmentOneBinding>(FragmentFragmentOneBinding::inflate) {
 
-    private val shmotkebiAdapter: ShmotkebiAdapter by lazy { ShmotkebiAdapter() }
+    private val shmotkebiAdapter: SuitsAdapter by lazy { SuitsAdapter() }
     val fragmentOneViewModel:FragmentOneViewModel by viewModels()
 
     override fun viewCreated() {
